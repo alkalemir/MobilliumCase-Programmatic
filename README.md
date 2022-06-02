@@ -1,10 +1,10 @@
 # MobilliumCase-Programmatic
 
 I completed this project in about 6-7 hours. I used MVC design pattern. 
-I didn't want to use IQKeyboardManager. I implemented myself. 
-Project is looking good all apple devices (iPad, iPhone). 
-I checked mobillium github repo and I reviewed folder structures. 
-I tried to implement like that. I created my own UI types. 
+I didn't prefer to use IQKeyboardManager. I implemented on my own. 
+The project is looking good at all Apple devices (iPad, iPhone). 
+I checked Mobillium's GitHub repo and reviewed folder structures. 
+I tried to implement like it. I created my own UI types. 
 These are: 
 
 ✔️  MobilliumButton
@@ -19,7 +19,7 @@ These are:
 
 
 
-Project have 4 screens (1 NavigationController and 3 ViewController). 
+Project have 4 screens (1 NavigationController and 3 ViewControllers). 
 
 ✔️  RegisterViewController
 
