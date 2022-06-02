@@ -19,14 +19,6 @@ These are:
 
 
 
-Project have 4 screens (1 NavigationController and 3 ViewControllers). 
-
-✔️  RegisterViewController
-
-✔  LoginViewController
-
-✔️  MovieListViewController
-
 
 
 
