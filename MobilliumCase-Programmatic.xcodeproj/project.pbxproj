@@ -10,6 +10,14 @@
 		048298862848B2AE009D4849 /* MobilliumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048298852848B2AE009D4849 /* MobilliumButton.swift */; };
 		048298882848B2C5009D4849 /* MobilliumTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048298872848B2C5009D4849 /* MobilliumTextField.swift */; };
 		0482988B2848B67C009D4849 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482988A2848B67C009D4849 /* UIViewController+Extensions.swift */; };
+		0482988D2848E370009D4849 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482988C2848E370009D4849 /* LoginViewController.swift */; };
+		0482988F2848E823009D4849 /* MobilliumCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482988E2848E823009D4849 /* MobilliumCheckBox.swift */; };
+		048298912848EEC5009D4849 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048298902848EEC5009D4849 /* HorizontalStackView.swift */; };
+		048298932848F17E009D4849 /* MobilliumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048298922848F17E009D4849 /* MobilliumLabel.swift */; };
+		048298952848F559009D4849 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048298942848F559009D4849 /* MovieListViewController.swift */; };
+		0482989A2848F5FA009D4849 /* MovieListController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048298992848F5FA009D4849 /* MovieListController+Extensions.swift */; };
+		0482989D2848F7EF009D4849 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482989C2848F7EF009D4849 /* MovieModel.swift */; };
+		0482989F2848FC39009D4849 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482989E2848FC39009D4849 /* Constants.swift */; };
 		04B115742848A1AA004BDEAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B115732848A1AA004BDEAE /* AppDelegate.swift */; };
 		04B115762848A1AA004BDEAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B115752848A1AA004BDEAE /* SceneDelegate.swift */; };
 		04B1157D2848A1AC004BDEAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B1157C2848A1AC004BDEAE /* Assets.xcassets */; };
@@ -21,6 +29,14 @@
 		048298852848B2AE009D4849 /* MobilliumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumButton.swift; sourceTree = "<group>"; };
 		048298872848B2C5009D4849 /* MobilliumTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumTextField.swift; sourceTree = "<group>"; };
 		0482988A2848B67C009D4849 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0482988C2848E370009D4849 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0482988E2848E823009D4849 /* MobilliumCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumCheckBox.swift; sourceTree = "<group>"; };
+		048298902848EEC5009D4849 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
+		048298922848F17E009D4849 /* MobilliumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumLabel.swift; sourceTree = "<group>"; };
+		048298942848F559009D4849 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		048298992848F5FA009D4849 /* MovieListController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieListController+Extensions.swift"; sourceTree = "<group>"; };
+		0482989C2848F7EF009D4849 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		0482989E2848FC39009D4849 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04B115702848A1AA004BDEAE /* MobilliumCase-Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobilliumCase-Programmatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B115732848A1AA004BDEAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B115752848A1AA004BDEAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +61,25 @@
 			isa = PBXGroup;
 			children = (
 				0482988A2848B67C009D4849 /* UIViewController+Extensions.swift */,
+				048298992848F5FA009D4849 /* MovieListController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		048298962848F5CC009D4849 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				048298942848F559009D4849 /* MovieListViewController.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		0482989B2848F7E5009D4849 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0482989C2848F7EF009D4849 /* MovieModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		04B115672848A1AA004BDEAE = {
@@ -68,6 +101,7 @@
 		04B115722848A1AA004BDEAE /* MobilliumCase-Programmatic */ = {
 			isa = PBXGroup;
 			children = (
+				0482989B2848F7E5009D4849 /* Models */,
 				048298892848B662009D4849 /* Extensions */,
 				04B1158F2848A32F004BDEAE /* Resources */,
 				04B1158E2848A31A004BDEAE /* Configuration */,
@@ -80,6 +114,9 @@
 				04B115812848A1AC004BDEAE /* Info.plist */,
 				048298852848B2AE009D4849 /* MobilliumButton.swift */,
 				048298872848B2C5009D4849 /* MobilliumTextField.swift */,
+				0482988E2848E823009D4849 /* MobilliumCheckBox.swift */,
+				048298902848EEC5009D4849 /* HorizontalStackView.swift */,
+				048298922848F17E009D4849 /* MobilliumLabel.swift */,
 			);
 			path = "MobilliumCase-Programmatic";
 			sourceTree = "<group>";
@@ -102,6 +139,7 @@
 		04B115892848A2C0004BDEAE /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				0482989E2848FC39009D4849 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -109,6 +147,7 @@
 		04B1158A2848A2D8004BDEAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				048298962848F5CC009D4849 /* MovieList */,
 				04B1158B2848A2E0004BDEAE /* Auth */,
 			);
 			path = Scenes;
@@ -126,6 +165,7 @@
 		04B1158C2848A2F0004BDEAE /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				0482988C2848E370009D4849 /* LoginViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -231,12 +271,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0482988D2848E370009D4849 /* LoginViewController.swift in Sources */,
 				04B115922848A509004BDEAE /* RegisterViewController.swift in Sources */,
+				0482989A2848F5FA009D4849 /* MovieListController+Extensions.swift in Sources */,
 				048298882848B2C5009D4849 /* MobilliumTextField.swift in Sources */,
+				0482988F2848E823009D4849 /* MobilliumCheckBox.swift in Sources */,
 				04B115742848A1AA004BDEAE /* AppDelegate.swift in Sources */,
+				0482989D2848F7EF009D4849 /* MovieModel.swift in Sources */,
 				048298862848B2AE009D4849 /* MobilliumButton.swift in Sources */,
+				048298912848EEC5009D4849 /* HorizontalStackView.swift in Sources */,
+				048298952848F559009D4849 /* MovieListViewController.swift in Sources */,
 				0482988B2848B67C009D4849 /* UIViewController+Extensions.swift in Sources */,
+				0482989F2848FC39009D4849 /* Constants.swift in Sources */,
 				04B115762848A1AA004BDEAE /* SceneDelegate.swift in Sources */,
+				048298932848F17E009D4849 /* MobilliumLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

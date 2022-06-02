@@ -26,12 +26,12 @@ class RegisterViewController: UIViewController {
     
     @objc func keyboardWillAppear(_ notification: Notification) {
        
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            //registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -keyboardHeight - 60).isActive = true
-        }
+//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//            let keyboardRectangle = keyboardFrame.cgRectValue
+//            let keyboardHeight = keyboardRectangle.height
+//
+//            //registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -keyboardHeight - 60).isActive = true
+//        }
     }
 
     @objc func keyboardWillDisappear() {
@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController {
     }
     
     func configure() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: Colors.backgroundColor.rawValue)
         
         configureRegisterButton()
         configureTextFields()
@@ -109,13 +109,21 @@ class RegisterViewController: UIViewController {
         
         if (!isTextFieldsFilled()) {
             presentAlert(title: "Error", message: "Please enter all information.")
+            return
         } else if (!isPasswdValid()) {
             presentAlert(title: "Error", message: "Passwors must be longer than 3 digits.")
+            return
         } else if (!isPasswdMatches()) {
             presentAlert(title: "Error", message: "Password don't match.")
+            return
         }
         
         
+        let destinationVC = LoginViewController()
+        destinationVC.email = emailTextField.text
+        destinationVC.password = passTextField.text
+        
+        navigationController?.pushViewController(destinationVC, animated: true)
         
     }
     

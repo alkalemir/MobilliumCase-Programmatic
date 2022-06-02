@@ -23,8 +23,9 @@ class MobilliumButton: UIButton {
     }
     
     func configureUI (title: String) {
-        backgroundColor = UIColor(named: "ButtonColor")
-        titleLabel?.textColor = .systemBackground
+        backgroundColor = UIColor(named: Colors.buttonColor.rawValue)
+        setTitleColor(.systemBackground, for: .normal)
+        //titleLabel?.textColor = .systemBackground
         layer.cornerRadius = 8
         layer.borderColor = UIColor.systemGray.cgColor
         setTitle(title, for: .normal)
