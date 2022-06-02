@@ -33,5 +33,3 @@ Project have 4 screens (1 NavigationController and 3 ViewControllers).
 
 
 ![photo_2022-06-02_19-30-22](https://user-images.githubusercontent.com/63621743/171679262-d9a459d7-c3ef-42d6-acf3-2c120a71c9ea.jpg | width=100)
-
-<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
