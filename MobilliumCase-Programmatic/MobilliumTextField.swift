@@ -23,6 +23,7 @@ class MobilliumTextField: UITextField {
     }
     
     func configureUI(placeholder: String) {
+        autocapitalizationType = .none
         self.placeholder = placeholder
         layer.borderColor = UIColor.systemGray2.cgColor
         layer.borderWidth = 1

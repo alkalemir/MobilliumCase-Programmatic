@@ -21,7 +21,6 @@ class MovieListViewController: UIViewController {
                                          Movie(title: "The Dark Knight"),
                                          Movie(title: "Steve Jobs")])
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()

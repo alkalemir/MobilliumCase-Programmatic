@@ -8,6 +8,10 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
+    var buttonBottomConstraint: NSLayoutConstraint!
+    var textViewBottomConstraint: NSLayoutConstraint!
+    
     // Buttons
     let registerButton          = MobilliumButton(title: "Register")
     
@@ -26,16 +30,19 @@ class RegisterViewController: UIViewController {
     
     @objc func keyboardWillAppear(_ notification: Notification) {
        
-//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//            let keyboardRectangle = keyboardFrame.cgRectValue
-//            let keyboardHeight = keyboardRectangle.height
-//
-//            //registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -keyboardHeight - 60).isActive = true
-//        }
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+
+            
+            buttonBottomConstraint.constant = -keyboardHeight - 10
+            textViewBottomConstraint.constant = -10
+        }
     }
 
     @objc func keyboardWillDisappear() {
-        
+        buttonBottomConstraint.constant = -60
+        textViewBottomConstraint.constant = -80
     }
     
     func configure() {
@@ -53,8 +60,10 @@ class RegisterViewController: UIViewController {
     func configureTextFields() {
         view.addSubview(reTypePassTextField)
         
+        textViewBottomConstraint = reTypePassTextField.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -80)
+        
         NSLayoutConstraint.activate([
-            reTypePassTextField.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -80),
+            textViewBottomConstraint,
             reTypePassTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             reTypePassTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             reTypePassTextField.heightAnchor.constraint(equalToConstant: 50)
@@ -93,10 +102,14 @@ class RegisterViewController: UIViewController {
     }
     
     func configureRegisterButton() {
+        
+        buttonBottomConstraint = registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60)
+        
+        
         view.addSubview(registerButton)
         
         NSLayoutConstraint.activate([
-            registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            buttonBottomConstraint,
             registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             registerButton.heightAnchor.constraint(equalToConstant: 55)
