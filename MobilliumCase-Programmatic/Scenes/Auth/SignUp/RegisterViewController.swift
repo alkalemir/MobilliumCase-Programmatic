@@ -12,10 +12,7 @@ class RegisterViewController: UIViewController {
     var buttonBottomConstraint: NSLayoutConstraint!
     var textViewBottomConstraint: NSLayoutConstraint!
     
-    // Buttons
     let registerButton          = MobilliumButton(title: "Register")
-    
-    // Text Fields
     let reTypePassTextField     = MobilliumTextField(placeholder: "Password Again")
     let passTextField           = MobilliumTextField(placeholder: "Password")
     let emailTextField          = MobilliumTextField(placeholder: "Email")
@@ -34,9 +31,8 @@ class RegisterViewController: UIViewController {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
 
-            
-            buttonBottomConstraint.constant = -keyboardHeight - 10
-            textViewBottomConstraint.constant = -10
+            buttonBottomConstraint.constant = -keyboardHeight - 5
+            textViewBottomConstraint.constant = -5
         }
     }
 

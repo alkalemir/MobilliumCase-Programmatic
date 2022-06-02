@@ -8,6 +8,12 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    var buttonBottomConstraint: NSLayoutConstraint!
+    var stackBottomConstraint: NSLayoutConstraint!
+    var stackLeadingConstraint: NSLayoutConstraint!
+    var stackTrailingConstraint: NSLayoutConstraint!
+    var passTextFieldBottomConstraint: NSLayoutConstraint!
 
     let loginButton         = MobilliumButton(title: "Login")
     let passTextField       = MobilliumTextField(placeholder: "Password")
@@ -30,11 +36,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 
     func configure() {
         view.backgroundColor = UIColor(named: Colors.backgroundColor.rawValue)
-
         configureLoginButton()
         configureTextFields()
         configureCheckBox()
@@ -42,24 +49,53 @@ class LoginViewController: UIViewController {
         configureHorizontalStackView()
     }
     
+    @objc func keyboardWillAppear(_ notification: Notification) {
+       
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+
+            buttonBottomConstraint.constant = -keyboardHeight - 10
+            stackBottomConstraint.constant = -10
+            stackLeadingConstraint.constant = 10
+            stackTrailingConstraint.constant = -10
+            passTextFieldBottomConstraint.constant = -110
+        }
+    }
+
+    @objc func keyboardWillDisappear() {
+        buttonBottomConstraint.constant = -60
+        stackBottomConstraint.constant = -80
+        
+        stackLeadingConstraint.constant = 90
+        stackTrailingConstraint.constant = -90
+        
+        passTextFieldBottomConstraint.constant = -200
+
+    }
+    
     func configureLoginButton() {
         view.addSubview(loginButton)
         
+        buttonBottomConstraint = loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60)
+        
         NSLayoutConstraint.activate([
-            loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            buttonBottomConstraint,
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             loginButton.heightAnchor.constraint(equalToConstant: 55)
         ])
         
         loginButton.addTarget(nil, action: #selector(loginButtonPressed), for: .touchUpInside)
+        
     }
     
     func configureTextFields() {
         view.addSubview(passTextField)
         
+        passTextFieldBottomConstraint = passTextField.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -200)
         NSLayoutConstraint.activate([
-            passTextField.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -200),
+            passTextFieldBottomConstraint,
             passTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             passTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             passTextField.heightAnchor.constraint(equalToConstant: 50)
@@ -85,14 +121,20 @@ class LoginViewController: UIViewController {
         
         stackView.axis = .vertical
         stackView.alignment = .leading
+        stackView.spacing = 1
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
+        stackBottomConstraint = stackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -80)
+        stackLeadingConstraint = stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 90)
+        stackTrailingConstraint = stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -90)
+        
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 90),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -90),
+            stackLeadingConstraint,
+            stackTrailingConstraint,
             stackView.topAnchor.constraint(equalTo: passTextField.bottomAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -80)
+            stackBottomConstraint
         ])
+        
     }
     
     func configureCheckBox() {

@@ -82,6 +82,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		048298A128490EFE009D4849 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				04B115872848A228004BDEAE /* AppDelegate */,
+				04B115752848A1AA004BDEAE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		048298A228490F11009D4849 /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				048298852848B2AE009D4849 /* MobilliumButton.swift */,
+				048298872848B2C5009D4849 /* MobilliumTextField.swift */,
+				0482988E2848E823009D4849 /* MobilliumCheckBox.swift */,
+				048298902848EEC5009D4849 /* HorizontalStackView.swift */,
+				048298922848F17E009D4849 /* MobilliumLabel.swift */,
+			);
+			path = CustomUIElements;
+			sourceTree = "<group>";
+		};
 		04B115672848A1AA004BDEAE = {
 			isa = PBXGroup;
 			children = (
@@ -101,22 +122,16 @@
 		04B115722848A1AA004BDEAE /* MobilliumCase-Programmatic */ = {
 			isa = PBXGroup;
 			children = (
+				048298A228490F11009D4849 /* CustomUIElements */,
 				0482989B2848F7E5009D4849 /* Models */,
 				048298892848B662009D4849 /* Extensions */,
 				04B1158F2848A32F004BDEAE /* Resources */,
 				04B1158E2848A31A004BDEAE /* Configuration */,
 				04B1158A2848A2D8004BDEAE /* Scenes */,
 				04B115892848A2C0004BDEAE /* Constants */,
-				04B115882848A2B5004BDEAE /* Protocols */,
-				04B115872848A228004BDEAE /* AppDelegate */,
-				04B115752848A1AA004BDEAE /* SceneDelegate.swift */,
+				048298A128490EFE009D4849 /* App */,
 				04B1157E2848A1AC004BDEAE /* LaunchScreen.storyboard */,
 				04B115812848A1AC004BDEAE /* Info.plist */,
-				048298852848B2AE009D4849 /* MobilliumButton.swift */,
-				048298872848B2C5009D4849 /* MobilliumTextField.swift */,
-				0482988E2848E823009D4849 /* MobilliumCheckBox.swift */,
-				048298902848EEC5009D4849 /* HorizontalStackView.swift */,
-				048298922848F17E009D4849 /* MobilliumLabel.swift */,
 			);
 			path = "MobilliumCase-Programmatic";
 			sourceTree = "<group>";
@@ -127,13 +142,6 @@
 				04B115732848A1AA004BDEAE /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		04B115882848A2B5004BDEAE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		04B115892848A2C0004BDEAE /* Constants */ = {
