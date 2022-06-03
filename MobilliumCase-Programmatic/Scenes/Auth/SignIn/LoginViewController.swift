@@ -163,7 +163,13 @@ class LoginViewController: UIViewController {
             
             navigationController?.pushViewController(destinationVC, animated: true)
         } else {
-            presentAlert(title: "Error", message: "Username or password is wrong!")
+            let alert = UIAlertController(title: "Error", message: "Username or password is wrong!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { action in
+                self.passTextField.text = ""
+                self.emailTextField.text = ""
+            }))
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+            present(alert, animated: true, completion: nil)
         }
     }
     
